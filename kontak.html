@@ -1,102 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kontak - FARIL PUTRA PRATAMA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #2c3e50;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar ul li {
+            float: left;
+        }
+
+        .navbar ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #1a252f;
+        }
+
+        .navbar ul li a.active {
+            background-color: #11998e;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #11998e;
+        }
+
+        .content p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #11998e;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(17, 153, 142, 0.4);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .contact-info strong {
+            color: #11998e;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar ul li {
+                float: none;
+                display: block;
+            }
+
+            .navbar ul li a {
+                text-align: left;
+                padding: 12px 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        min-height: 100vh;
-        color: #333;
-        background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
-        background-size: cover;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
- ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: blue;
-}
-
-li {
-  float: left;
-  padding: 14px 16px;
-  margin: 0;
-  display: flex;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.container {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.container form {
-    margin: auto;
-    padding: 20px 40px;
-
-}
-
-.container h2 {
-    margin-top: 0;
-}
-@media (max-width: 600px) {
-  ul li {
-    float: none;
-  }
-}
-
-</style>
 <body>
-    <header>
-        <h1>Selamat datang di my web</h1>
-        </header>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-        <li><a href="services.html">Services</a></li>
-    </ul>
+    <!-- Header -->
+    <header class="header">
+        <h1>Hubungi Kami</h1>
+        <p>Kontak dan Saran - FARIL PUTRA PRATAMA</p>
+    </header>
 
-    <div class="container">
-        <h2>Form Kontak</h2>
-        <form action="#" method="post">
-            <label for="name">Nama:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Pesan:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-            <input type="submit" value="Kirim">
-        </form>
-    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="kontak.html" class="active">Kontak</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Contact Form -->
+        <div class="content">
+            <h2>Form Kontak</h2>
+            <p>Jika Anda ingin menghubungi saya untuk keperluan bisnis, kolaborasi, atau sekadar untuk menyapa, silakan isi formulir di bawah ini.</p>
+            
+            <div class="contact-info">
+                <h3>Informasi Kontak</h3>
+                <p><strong>Email:</strong> faril.putra@email.com</p>
+                <p><strong>Telepon:</strong> +62 812 3456 7890</p>
+                <p><strong>Alamat:</strong> [Alamat Rumah]</p>
+            </div>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+            </form>
+        </div>
+
+        <!-- Saran Form -->
+        <div class="content">
+            <h2>Form Saran dan Masukan</h2>
+            <p>Kami sangat menghargai saran dan masukan Anda. Masukan Anda sangat berarti untuk meningkatkan kualitas layanan dan contenu di website ini.</p>
+            <p>Silakan isi formulir di bawah ini untuk memberikan saran atau masukan.</p>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="nama-saran">Nama Lengkap</label>
+                    <input type="text" id="nama-saran" name="nama-saran" placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email-saran">Email</label>
+                    <input type="email" id="email-saran" name="email-saran" placeholder="Masukkan email Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="saran">Saran / Masukan</label>
+                    <textarea id="saran" name="saran" placeholder="Tulis saran atau masukan Anda di sini..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Saran</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 FARIL PUTRA PRATAMA. All rights reserved.</p>
+       
+    </footer>
 </body>
-<footer>
-    <footer style="text-align: center; padding: 20px; background-color: #4CAF50; color: white;">
-    &copy; 2025 Pykasi. All rights reserved.
-</footer>
-</footer>
 </html>

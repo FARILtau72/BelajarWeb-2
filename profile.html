@@ -1,84 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile - FARIL PUTRA PRATAMA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+      
+        .header {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+       
+        .navbar {
+            background-color: #2c3e50;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar ul li {
+            float: left;
+        }
+
+        .navbar ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #1a252f;
+        }
+
+        .navbar ul li a.active {
+            background-color: #11998e;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #11998e;
+        }
+
+        .content p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+   
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #11998e;
+            margin-bottom: 20px;
+        }
+
+        .profile-name {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .profile-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .profile-bio {
+            max-width: 600px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .info-card {
+            background: #f5f7fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #11998e;
+        }
+
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .info-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .info-card ul li:last-child {
+            border-bottom: none;
+        }
+
+      
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+        }
+
+      
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+       
+        @media (max-width: 768px) {
+            .navbar ul li {
+                float: none;
+                display: block;
+            }
+
+            .navbar ul li a {
+                text-align: left;
+                padding: 12px 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-name {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-   body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        min-height: 100vh;
-        color: #333;
-        background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
-        background-size: cover;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
- ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: blue;
-}
-
-li {
-  float: left;
-  padding: 14px 16px;
-  margin: 0;
-  display: flex;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.container {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}   
-
-.container h1 {
-    margin-bottom: 20px;
-    color: black;
-}
-
-</style>
 <body>
-    <header>
-        <h1>selamat datang di my web</h1>
+    
+    <header class="header">
+        <h1>Profil Pribadi</h1>
+        <p>Tentang Saya - FARIL PUTRA PRATAMA</p>
     </header>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-        <li><a href="services.html">Services</a></li>
-    </ul>
-    <div class="container">
-        <h1>Profil Kami</h1>
-        <p>Kami adalah perusahaan yang bergerak di bidang teknologi informasi dengan fokus pada pengembangan perangkat lunak dan solusi digital. Dengan tim yang berpengalaman, kami berkomitmen untuk memberikan layanan terbaik kepada klien kami.</p>
-        <p>Visi kami adalah menjadi pemimpin dalam inovasi teknologi dan memberikan dampak positif bagi masyarakat melalui produk dan layanan kami.</p>
 
-        <p>Nilai-nilai kami meliputi integritas, inovasi, dan kepuasan pelanggan. Kami percaya bahwa dengan bekerja sama, kita dapat mencapai hasil yang luar biasa dan menciptakan masa depan yang lebih baik.</p>
-      <p>Untuk informasi lebih lanjut tentang layanan kami, jangan ragu untuk menghubungi kami melalui halaman kontak.</p>
-    </div>
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+        </ul>
+    </nav>
+
+    
+    <main class="container">
+        <div class="content">
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="FARIL PUTRA PRATAMA" class="profile-image">
+                <h1 class="profile-name">FARIL PUTRA PRATAMA</h1>
+                <p class="profile-title">IT AUDITOR | Pemrogram | Siswa</p>
+                <p class="profile-bio">Halo! Saya adalah FARIL PUTRA PRATAMA, seorang siswa yang passionate di bidang teknologi informasi dan pemrograman. Saya senang mempelajari hal-hal baru, terutama dalam dunia pengembangan web dan aplikasi.</p>
+            </div>
+
+          
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Tahun Pengalaman</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Proyek Selesai</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+            </div>
+
+            <!-- Skills & Interests -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Keterangan Singkat</h3>
+                    <p>Saya adalah seseorang yang selalu tertarik untuk mempelajari hal-hal baru dalam dunia teknologi. Saya percaya bahwa pembelajaran adalah proses seumur hidup dan saya berkomitmen untuk terus berkembang.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Keterampilan</h3>
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>Pengembangan Web</li>
+                        <li>Desain Grafis Dasar</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Minat & Hobby</h3>
+                    <ul>
+                        <li>Membaca buku teknologi</li>
+                        <li>Menulis kode program</li>
+                        <li>Olahraga</li>
+                        <li>Musik</li>
+                        <li>Belajar bahasa baru</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Pendidikan</h3>
+                    <ul>
+                        <li>SD : MIS HIDAYATUL IKHWAN</li>
+                        <li>SMP : MTS ANNAJAH BOGOR</li>
+                        <li>SMA : SMK TARUNA BANGSA</li>
+                        <li>Kuliah : BINUS UNIVERSITY</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; border-radius: 10px; text-align: center;">
+                <p style="font-size: 18px; font-style: italic; margin: 0;">"Pembelajaran tidak pernah berakhir. Setiap hari adalah peluang untuk belajar sesuatu yang baru."</p>
+                <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">- FARIL PUTRA PRATAMA</p>
+            </div>
+        </div>
+    </main>
+
+   
+    <footer class="footer">
+        <p>&copy; 2025 FARIL PUTRA PRATAMA. All rights reserved.</p>
+    </footer>
 </body>
-<footer style="text-align: center; padding: 20px; background-color: black; color: white;">
-    &copy; 2024 Pykasi. All rights reserved.
 </html>

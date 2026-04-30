@@ -25,7 +25,7 @@
         text-decoration: none;
     }
 
-   ul {
+  ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -33,11 +33,20 @@
   background-color: blue;
 }
 
-li {
+ul li {
   float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
   padding: 14px 16px;
-  margin: 0;
-  display: flex;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
 }
 
 .header prequote {
@@ -53,10 +62,17 @@ li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
 
 </style>
 <header>
-    <prequote style="font-size: 24px; margin: 0;">Selamat datang di layanan kami</prequote>
+    <h1>Selamat datang di layanan kami</h1>
 </header>
 <body>
     <ul>
